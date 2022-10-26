@@ -1,0 +1,11 @@
+__pycache__/
+build/
+dist/
+Include/
+Lib/
+Scripts/
+share/
+deepdanbooru.onnx
+server.spec
+pyvenv.cfg
+tags.txt
