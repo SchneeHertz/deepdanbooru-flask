@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import json, os
 import numpy
 from deepdanbooru_onnx import DeepDanbooru
@@ -16,6 +16,7 @@ class MyEncoder(json.JSONEncoder):
             return super(MyEncoder, self).default(obj)
 
 app = Flask(__name__)
+app.json_encoder = MyEncoder
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -23,4 +24,4 @@ def predict():
     print(f"predict picture in: {p}")
     result = danbooru(p)
     print(f"result: {result}")
-    return json.dumps(result, cls=MyEncoder)
+    return jsonify(result)
