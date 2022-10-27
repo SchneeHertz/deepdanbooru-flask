@@ -25,3 +25,15 @@ def predict():
     result = danbooru(p)
     print(f"result: {result}")
     return jsonify(result)
+
+@app.route('/predictbatch', methods=['POST'])
+def predict_batch():
+    pass
+
+@app.route('/predictimage', methods=['POST'])
+def predict_image():
+    pass
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    pass
