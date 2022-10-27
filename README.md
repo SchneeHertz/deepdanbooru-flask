@@ -1,11 +1,12 @@
+This is a local tagging server for Songbird
+
 ### setup
 
 1. install requirement from requirements.txt
 
     ```pip install -r requirement.txt```
 
-2. download **deepdanbooru.onnx** and **tags.txt** from https://huggingface.co/chinoll/deepdanbooru/tree/main
-and store in the root folder
+2. download **deepdanbooru.onnx** and **tags.txt** from https://huggingface.co/chinoll/deepdanbooru/tree/main and store in the root folder
 
 3. run
 
@@ -18,7 +19,7 @@ and store in the root folder
     HTTP ADDRESS: http://localhost:12421/predict
     Content-Type: multipart/form-data;
     formdata: {
-      filepath: "path/to/picture"
+      filepath: "path/to/image"
     }
 
     response data: {
@@ -29,3 +30,8 @@ and store in the root folder
         }
     }
     ```
+
+### todo
+1. support image upload
+2. support batch predict
+3. simple web page
