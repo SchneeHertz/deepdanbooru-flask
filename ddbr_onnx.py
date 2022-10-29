@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify
 import json, os
 import numpy
 from deepdanbooru_onnx import DeepDanbooru
-danbooru = DeepDanbooru(model_path=os.path.join(os.getcwd(), "deepdanbooru.onnx"), tags_path=os.path.join(os.getcwd(), "tags.txt"))
+print(os.path.dirname(__file__))
+danbooru = DeepDanbooru(model_path=os.path.join(os.path.dirname(__file__), "deepdanbooru.onnx"), tags_path=os.path.join(os.path.dirname(__file__), "tags.txt"))
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -17,6 +18,10 @@ class MyEncoder(json.JSONEncoder):
 
 app = Flask(__name__)
 app.json_encoder = MyEncoder
+
+@app.route('/test', methods=['GET'])
+def test():
+    return 'pass'
 
 @app.route('/predict', methods=['POST'])
 def predict():

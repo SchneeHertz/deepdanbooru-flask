@@ -6,6 +6,6 @@ Lib/
 Scripts/
 share/
 deepdanbooru.onnx
-server.spec
+deepdanbooru-flask.spec
 pyvenv.cfg
 tags.txt
